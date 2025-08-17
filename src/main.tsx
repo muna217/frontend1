@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import App from './App'
@@ -10,7 +10,10 @@ import Upload from './pages/Upload'
 import VideoPage from './pages/VideoPage'
 
 const router = createBrowserRouter([
-  { path: '/', element: <App />, children: [
+  {
+    path: '/',
+    element: <App />,
+    children: [
       { index: true, element: <Feed /> },
       { path: 'login', element: <Login /> },
       { path: 'signup', element: <Signup /> },
@@ -20,8 +23,9 @@ const router = createBrowserRouter([
   }
 ])
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
 )
+
