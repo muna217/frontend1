@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: linear-gradient(90deg, #ff0050, #00f2ea);
+}
+
+.btn {
+  @apply px-4 py-2 rounded-2xl font-semibold transition transform active:scale-95;
+  background: var(--accent);
+  color: #0b0b0e;
+  box-shadow: 0 8px 20px rgba(255,0,80,0.35), 0 4px 14px rgba(0,242,234,0.25);
+}
+.btn-outline {
+  @apply px-3 py-2 rounded-2xl border border-white/20;
+}
+
+.video-card video::-webkit-media-controls {
+  display: none !important;
+}
